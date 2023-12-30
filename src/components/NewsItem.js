@@ -5,7 +5,7 @@ export default class NewsItem extends Component {
     let { title, description, imageURL, newsUrl } = this.props;
     return (
       <div>
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card my-3" style={{ width: "18rem" }}>
           <img src={imageURL} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{title} </h5>
@@ -18,9 +18,10 @@ export default class NewsItem extends Component {
                 color: "inherit", // Use the default text color
                 cursor: "pointer", // Show a pointer cursor on hover
               }}
-            ><span className="visually-hidden">Read more about {title}</span></a>
+            ><span className="visually-hidden">Read more...</span></a>
           </div>
         </div>
+      
       </div>
     );
   }

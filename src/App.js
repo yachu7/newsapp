@@ -7,63 +7,54 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export default class App extends Component {
   render() {
     return (
-      
       <Router>
-          <Navbar />
-          
-          <Routes>
-            <Route
-              
-              key="general"
-              path="/"
-              element={<News pageSize={6} category={"general"} />}
+        <Navbar />
+
+        <Routes>
+          <Route
+            path="/"
+            element={<News key="general" pageSize={6} category={"general"} />}
+          />
+          <Route
+            path="/business"
+            element={<News key="business" pageSize={6} category={"business"} />}
+          />
+          <Route
+            path="/entertainment"
+            element={
+              <News
+                key="entertainment"
+                pageSize={6}
+                category={"entertainment"}
               />
-            <Route
-              
-              key="business"
-              path="/business"
-              element={<News pageSize={6} category={"business"} />}
-              />
-            <Route
-              
-              key="entertainment"
-              path="/entertainment"
-              element={<News pageSize={6} category={"entertainment"} />}
-              />
-            <Route
-              
-              key="sports"
-              path="/sports"
-              element={<News pageSize={6} category={"sports"} />}
-              />
-            <Route
-              
-              key="science"
-              path="/science"
-              element={<News pageSize={6} category={"science"} />}
-              />
-            <Route
-              
-              key="health"
-              path="/health"
-              element={<News pageSize={6} category={"health"} />}
-              />
-            <Route
-              
-              key="technology"
-              path="/technology"
-              element={<News pageSize={6} category={"technology"} />}
-              />
-            <Route
-              
-              key="generalnews"
-              path="/general"
-              element={<News pageSize={6} category={"general"} />}
-              />
-          </Routes>
-        </Router>
-              
-      
+            }
+          />
+          <Route
+            path="/sports"
+            element={<News key="sports" pageSize={6} category={"sports"} />}
+          />
+          <Route
+            path="/science"
+            element={<News key="science" pageSize={6} category={"science"} />}
+          />
+          <Route
+            path="/health"
+            element={<News key="health" pageSize={6} category={"health"} />}
+          />
+          <Route
+            path="/technology"
+            element={
+              <News key="technology" pageSize={6} category={"technology"} />
+            }
+          />
+          <Route
+            path="/general"
+            element={
+              <News key="generalnews" pageSize={6} category={"general"} />
+            }
+          />
+        </Routes>
+      </Router>
     );
   }
 }

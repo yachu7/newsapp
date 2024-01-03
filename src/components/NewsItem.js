@@ -3,10 +3,11 @@ import React, { Component } from "react";
 export default class NewsItem extends Component {
   render() {
     let { title, description, imageURL, newsUrl } = this.props;
+    const defaultImageURL = "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
     return (
       <div>
-        <div className="card my-3" style={{ width: "18rem" }}>
-          <img src={imageURL} className="card-img-top" alt="..." />
+        <div className="card my-3">
+          <img src={imageURL || defaultImageURL} className="card-img-top" alt="..." style={{height : "200px ",objectFit: "contain" }}/>
           <div className="card-body">
             <h5 className="card-title">{title} </h5>
             <p className="card-text">{description}</p>

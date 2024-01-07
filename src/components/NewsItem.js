@@ -1,27 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class NewsItem extends Component {
-  render() {
+const NewsItem = (props) => {
+  
     let { title, description, imageURL, newsUrl, author, date, source } =
-      this.props;
+      props;
     const defaultImageURL =
       "https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png";
     return (
-      <div>
-        <div className="card my-3">
-          <span
-            className="position-absolute top-0  translate-middle badge rounded-pill bg-info"
+      <div style={{ margin: "15px" }}>
+        <div
+          className="card my-3"
+          style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
+        >
+          <div
             style={{
-              left: "80%",
-              zIndex: "1",
+              display: "flex",
+              justifyContent: "flex-end",
+              position: "absolute",
+              right: "0",
             }}
           >
-            {source.name}
-          </span>
+            <span
+              className="badge rounded-pill bg-info"
+              style={{
+                left: "80%",
+                zIndex: "1",
+              }}
+            >
+              {source.name}
+            </span>
+          </div>
 
           <img
             src={imageURL || defaultImageURL}
-            className="card-img-top"
+            className="card-img-top my-2"
             alt="..."
             style={{ height: "200px ", objectFit: "contain" }}
           />
@@ -54,5 +66,7 @@ export default class NewsItem extends Component {
         </div>
       </div>
     );
-  }
+  
 }
+
+export default NewsItem;
